@@ -1,0 +1,20 @@
+{% extends 'studentApp/studentLayout.html' %} 
+{% block content %}
+
+<form action="#">
+    <img src="{{data.dp.url}}" alt="dp" width="200px" height="200px">
+    <input type="text" value="{{data.Fname}}" readonly>
+    <input type="text" value="{{data.Lname}}" readonly>
+    <input type="text" value="{{data.addmisionno}}" readonly>
+    <input type="text" value="{{data.Age}}" readonly>
+    <input type="text" value="{{data.gender}}" readonly>
+    <input type="text" value="{{data.dob}}" readonly>
+    <input type="text" value="{{data.address}}" readonly>
+    <input type="text" value="{{data.phonenumber}}" readonly>
+    <input type="text" value="{{data.email}}" readonly>
+    <input type="text" value="{{data.clas}}" readonly>
+    <input type="text" value="{{data.division}}" readonly>
+    
+</form>
+
+{% endblock %}

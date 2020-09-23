@@ -1,0 +1,24 @@
+{% extends 'studentApp/studentLayout.html' %} 
+{% block content %}
+
+<table>
+    <tr>
+    <th>Questin</th>
+    <th>Last-date</th>
+    <th>responds</th>
+</tr>
+{% for q in questin %}
+<tr>
+    <td style="width: 200px;">
+        {{q.questin}}
+    </td>
+    <td>
+        {{q.ldate}}
+    </td>
+    <td>
+        <a href="{% url 'answer' q.id %}">responds</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

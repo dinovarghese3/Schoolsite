@@ -1,0 +1,289 @@
+{% extends 'adminApp/adminLayout.html' %} 
+{% block content %}
+<!-- <table>
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Age</th>
+        <th>dob</th>
+        <th>phone</th>
+        <th>email</th>
+        <th>address</th>
+        <th>class</th>
+        <th>division</th>
+        
+    </tr>
+    {% for t in teacher %}
+    <td>
+        <tr>
+            <td>{{t.Fname}}</td>
+            <td>{{t.Lname}}</td>
+            <td>{{t.Age}}</td>
+            <td>{{t.dob}}</td>
+            <td>{{t.address}}</td>
+            <td>{{t.phonenumber}}</td>
+            <td>{{t.email}}</td>
+            <td>{{t.clas}}</td>
+            <td>{{t.division}}</td>
+            
+        </tr>
+        
+    </td>
+    {% endfor %}
+</table> -->
+
+    <title>All Students</title>
+    <!-- Meta Tags -->
+    
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta Tags -->
+
+    <!-- Style-sheets -->
+    <!-- Bootstrap Css -->
+    <link href="../static/adminApp/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <!-- Bootstrap Css -->
+    <!-- Common Css -->
+    <link href="../static/adminApp/css/style.css" rel="stylesheet" type="text/css" media="all">
+    <!--// Common Css -->
+    <!-- Nav Css -->
+    <link rel="stylesheet" href="../static/adminApp/css/style4.css">
+    <!--// Nav Css -->
+    <!-- Fontawesome Css -->
+    <link href="../static/adminApp/css/fontawesome-all.css" rel="stylesheet">
+    <!--// Fontawesome Css -->
+    <!--// Style-sheets -->
+
+    <!--web-fonts-->
+    <link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!--//web-fonts-->
+
+
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <!-- Page Content Holder -->
+        <div id="content">
+            <!-- top-bar -->
+            <!--// top-bar -->
+            
+
+            <!-- main-heading -->
+            <h2 class="main-title-w3layouts mb-2 text-center">All Teachers</h2>
+            <!--// main-heading -->
+
+            <!-- Grids Content -->
+            <section class="grids-section bd-content">
+
+                <!-- Grids Info -->
+                <div class="outer-w3-agile mt-3">
+                    
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                
+                                
+                                <th class="text-center">
+                                    First Name
+                                </th>
+                                
+                                <th class="text-center">
+                                    Last Name
+                                </th>
+                                
+                                <th class="text-center">
+                                    Age
+                                </th>
+                                <th class="text-center">
+                                    Gender
+                                </th>
+                                <th class="text-center">
+                                    Date-of-Birth
+                                </th>
+                                
+                                <th class="text-center">
+                                    Phone Number
+                                </th>
+                                <th class="text-center">
+                                    Email
+                                </th>
+                                <th class="text-center">
+                                    Address
+                                </th>
+                                
+                                <th class="text-center">
+                                    Class
+                                </th>
+                                <th class="text-center">
+                                    Division
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody style="text-align: center;">
+                            {% for t in teacher %}
+                            <tr>
+                                
+                                <td>{{t.Fname}}</td>
+                                <td>{{t.Lname}}</td>
+                                <td>{{t.Age}}</td>
+                                <td>{{t.gender}}</td>
+                                <td>{{t.dob}}</td>
+                                <td>{{t.phonenumber}}</td>
+                                <td>{{t.email}}</td>
+                                <td>{{t.address}}</td>
+                                <td>{{t.clas}}</td>
+                                <td>{{t.division}}</td>
+                                <td><img src="{{t.dp.url}}" width="40px" height="40px" alt="dp"></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Required common Js -->
+    <script src="../static/adminApp/js/jquery-2.2.3.min.js"></script>
+    <!-- //Required common Js -->
+    
+    <!-- loading-gif Js -->
+    <script src="../static/adminApp/js/modernizr.js"></script>
+    <script>
+        //paste this code under head tag or in a seperate js file.
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+    <!--// loading-gif Js -->
+
+    <!-- Sidebar-nav Js -->
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+    <!--// Sidebar-nav Js -->
+    <!-- Bar-chart -->
+    <script src="../static/adminApp/js/rumcaJS.js"></script>
+    <script src="../static/adminApp/js/example.js"></script>
+    <!--// Bar-chart -->
+    <!-- Calender -->
+    <script src="../static/adminApp/js/moment.min.js"></script>
+    <script src="../static/adminApp/js/pignose.calender.js"></script>
+    <script>
+        //<![CDATA[
+        $(function () {
+            $('.calender').pignoseCalender({
+                select: function (date, obj) {
+                    obj.calender.parent().next().show().text('You selected ' +
+                        (date[0] === null ? 'null' : date[0].format('YYYY-MM-DD')) +
+                        '.');
+                }
+            });
+
+            $('.multi-select-calender').pignoseCalender({
+                multiple: true,
+                select: function (date, obj) {
+                    obj.calender.parent().next().show().text('You selected ' +
+                        (date[0] === null ? 'null' : date[0].format('YYYY-MM-DD')) +
+                        '~' +
+                        (date[1] === null ? 'null' : date[1].format('YYYY-MM-DD')) +
+                        '.');
+                }
+            });
+        });
+        //]]>
+    </script>
+    <!--// Calender -->
+
+    <!-- Required common Js -->
+    <script src="../static/adminapp/js/jquery-2.2.3.min.js"></script>
+    <!-- //Required common Js -->
+    
+    <!-- loading-gif Js -->
+    <script src="../static/adminapp/js/modernizr.js"></script>
+    <script>
+        //paste this code under head tag or in a seperate js file.
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+    <!--// loading-gif Js -->
+
+    <!-- Sidebar-nav Js -->
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+    <!--// Sidebar-nav Js -->
+    <script src="../static/adminapp/js/moment.min.js"></script>
+    <script src="../static/adminapp/js/pignose.calender.js"></script>
+    <script>
+        //<![CDATA[
+        $(function () {
+            $('.calender').pignoseCalender({
+                select: function (date, obj) {
+                    obj.calender.parent().next().show().text('You selected ' +
+                        (date[0] === null ? 'null' : date[0].format('YYYY-MM-DD')) +
+                        '.');
+                }
+            });
+
+            $('.multi-select-calender').pignoseCalender({
+                multiple: true,
+                select: function (date, obj) {
+                    obj.calender.parent().next().show().text('You selected ' +
+                        (date[0] === null ? 'null' : date[0].format('YYYY-MM-DD')) +
+                        '~' +
+                        (date[1] === null ? 'null' : date[1].format('YYYY-MM-DD')) +
+                        '.');
+                }
+            });
+        });
+        //]]>
+    </script>
+    <script src="../static/adminapp/js/script.js"></script>
+    <!--// profile-widget-dropdown js-->
+
+    <!-- Count-down -->
+    <script src="../static/adminapp/js/simplyCountdown.js"></script>
+    <link href="../static/adminapp/css/simplyCountdown.css" rel="stylesheet" type="text/css">
+    <script>
+        var d = new Date();
+        simplyCountdown('simply-countdown-custom', {
+            year: d.getFullYear(),
+            month: d.getMonth() + 2,
+            day: 25
+        });
+    </script>
+    <!--// Count-down -->
+
+    <!-- Js for bootstrap working-->
+    <script src="../static/adminapp/js/bootstrap.min.js"></script>
+    <!-- //Js for bootstrap working -->
+
+
+
+</div></div></body>
+
+{% endblock %}

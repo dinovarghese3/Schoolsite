@@ -1,0 +1,91 @@
+<!-- <table>
+    <tr>
+        <th>
+            Admision no
+        </th>
+        
+        <th>
+            Name of student
+        </th>
+        
+        <th>
+            submision date
+        </th>
+        
+        <th>
+            Answer
+        </th>
+        <th>
+            
+        </th>
+    </tr>
+    {% for i in answer %}
+    <tr>
+        <td>
+            {{i.adno}}
+        </td>
+        
+        <td>
+            {{i.name}}
+        </td>
+        
+        <td>
+            {{i.sdate}}
+        </td>
+        
+        <td>
+            <a href="{{i.answes.url}}"> View file</a>
+        </td>
+        <td>
+            <a href="{% url 'summaryfind' i.id %}"> View Summary</a>
+        </td>
+
+    </tr>              
+    {% endfor %}
+</table> -->
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<div style="margin: 5%;">
+    <center><h4>All Assignments</h4></center>
+    <hr width="50%" class="bg-success">
+    <br>
+<table class="table table-striped border rounded-lg">
+    <thead>
+      <tr >
+        <th scope="col">Admision no</th>
+        <th scope="col">Name of student</th>
+        <th scope="col">submision date</th>
+        <th scope="col">Answer</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in answer %}
+<tr>
+    <td style="width: 200px;">
+        {{i.adno}}
+    </td>
+    <td>
+        {{i.name}}
+    </td>
+    <td>
+        {{i.sdate}}
+    </td>
+    <td>
+        <a href="{{i.answes.url}}" class="btn btn-primary"> View file</a>
+    </td>
+    <td>
+        <a href="{% url 'summaryfind' i.id %}" class="btn btn-primary">Summary</a>
+    </td>
+</tr>
+{% endfor %}
+
+            
+    </tbody>
+  </table>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

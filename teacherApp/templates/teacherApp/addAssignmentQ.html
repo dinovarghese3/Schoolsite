@@ -1,0 +1,39 @@
+{% extends 'teacherApp/teacherLayout.html' %} 
+{% block content %}
+<!-- 
+<form action="{% url 'addassignment' %}" method="POST">{% csrf_token %}
+    <input type="text" value="{{data.email}}" readonly>
+    <input type="text" value="{{data.clas}}"readonly>
+    <input type="text" value="{{data.division}}" readonly>
+    <input type="date" placeholder="last date" name="ld" required>
+    <textarea name="ques" cols="30" rows="10" required></textarea>
+    <input type="submit" value="submit">
+</form> -->
+<br>
+<center><h4>Add Questin</h4></center>
+<hr width="50%" class="bg-success">
+<br>
+<form action="{% url 'addassignment' %}" method="POST" style="margin-right: 10%; margin-left: 10%;">{% csrf_token %}
+    <div class="form-group">
+      <label >Email</label>
+      <input type="email" class="form-control" value="{{data.email}}" >
+    </div>
+    <div class="form-group">
+        <label >Class</label>
+        <input type="text" class="form-control"value="{{data.clas}}" >
+      </div>
+      <div class="form-group">
+        <label >Division</label>
+        <input type="text" class="form-control"value="{{data.division}}" >
+      </div>
+      <div class="form-group">
+        <label >Last Date of Submission</label>
+        <input type="date" class="form-control" name="ld" >
+      </div>
+      <div class="form-group">
+        <label >Questin</label>
+        <textarea class="form-control" name="ques" cols="30" rows="10" required ></textarea>
+      </div>
+      <input type="submit" value="submit" class="btn btn-primary">
+</form>
+{% endblock %}

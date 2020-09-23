@@ -1,0 +1,11 @@
+{% extends 'studentApp/studentLayout.html' %} 
+{% block content %}
+<form action="{% url 'answer' asi.id %}?id=asi.id" method="POST" enctype="multipart/form-data" >{% csrf_token %}
+    
+    <!-- <textarea name="ans" id="" cols="30" rows="10"></textarea> -->
+    <input type="file" name="an" class="form-control" required>
+    <input type="submit">
+</form>
+
+
+{% endblock %}

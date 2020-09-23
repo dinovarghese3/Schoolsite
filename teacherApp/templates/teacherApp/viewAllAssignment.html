@@ -1,0 +1,58 @@
+{% extends 'teacherApp/teacherLayout.html' %} 
+{% block content %}
+
+<!-- <table>
+    <tr>
+    <th>Questin</th>
+    <th>Last-date</th>
+    <th>responds</th>
+</tr>
+{% for q in qdata %}
+<tr>
+    <td style="width: 200px;">
+        {{q.questin}}
+    </td>
+    <td>
+        {{q.ldate}}
+    </td>
+    <td>
+        <a href="{% url 'responds' q.id %}">responds</a>
+    </td>
+</tr>
+{% endfor %}
+</table> -->
+<div style="margin: 5%;">
+    <center><h4>All Assignments</h4></center>
+    <hr width="50%" class="bg-success">
+    <br>
+<table class="table table-striped border rounded-lg">
+    <thead>
+      <tr >
+        <th scope="col">Questin</th>
+        <th scope="col">Last-date</th>
+        <th scope="col">Responds</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        {% for q in qdata %}
+<tr>
+    <td style="width: 200px;">
+        {{q.questin}}
+    </td>
+    <td>
+        {{q.ldate}}
+    </td>
+    <td>
+        <a href="{% url 'responds' q.id %} " class="btn btn-primary">responds</a>
+    </td>
+</tr>
+{% endfor %}
+
+            
+    </tbody>
+  </table>
+</div>
+</body>
+
+{% endblock %}

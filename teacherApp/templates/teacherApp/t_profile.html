@@ -1,0 +1,143 @@
+{% extends 'teacherApp/teacherLayout.html' %} 
+{% block content %}
+<!-- <form action="#" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    <input type="text" placeholder="fname" name="fname" value="{{data.Fname}}"><br>
+    <input type="text" name="lname" placeholder="lastname" value="{{data.Lname}}"><br>
+    <input type="text" name="age" placeholder="age" value="{{data.Age}}"><br>
+    <input type="text" name="dob" placeholder="date of birth" value="{{data.dob}}"><br>
+    <input type="text" name="ph" placeholder="phone number" value="{{data.email}}"><br>
+    <input type="text" name="mail" placeholder="email" value="{{data.phonenumber}}"><br>
+    <textarea name="address" cols="30" rows="10" placeholder="address">{{data.address}}</textarea><br>
+    <input type="text" name="class" placeholder="class" value="{{data.clas}}"><br>
+    <input type="text" name="division" placeholder="division" value="{{data.division}}"><br>
+    <img src="{{data.dp.url}}" width="200px" height="200px"><br>
+    
+</form> -->
+
+
+<head>
+  <title>Teachers view</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  
+  
+</head>
+
+
+<br>
+<center><h1>Profile</h1></center>
+
+<hr width="50%" class="bg-success">
+<br>
+<div class="container bootstrap snippet" style="font-family: sans-serif;">
+    
+    <div class="row">
+  		
+    </div>
+    <div class="row">
+  		<div class="col-sm-3"><!--left col-->
+      <div class="text-center">
+          
+        <img src="{{data.dp.url}}" class="rounded-circle" width="200px" height="200px" alt="avatar">
+      </div><br>
+        </div>
+    	<div class="col-sm-9">
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                <table class="table table-borderless  border rounded " >
+                    <thead >
+                      <tr >
+                        
+                        <th scope="col" style="color: gray;">First name</th>
+                        <th scope="col" style="color: gray;">Last name</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                        
+                      <tr>
+                        <td>{{data.Fname}}</td>
+                        <td>{{data.Lname}}</td>
+                      </tr>
+                      
+                            
+                    </tbody>
+                    <thead>
+                        <tr >
+                          
+                          <th scope="col" style="color: gray;">Age</th>
+                          <th scope="col" style="color: gray;">Date-of-Birth</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                          
+                        <tr>
+                          <td>{{data.Age}}</td>
+                          <td>{{data.dob}}</td>
+                        </tr>
+                        
+                              
+                      </tbody>
+                      <thead>
+                        <tr >
+                          
+                          <th scope="col" style="color: gray;">Gender</th>
+                          <th scope="col" style="color: gray;">Phone Number</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                          
+                        <tr>
+                          <td>{{data.gender}}</td>
+                          <td>{{data.phonenumber}}</td>
+                        </tr>
+                        
+                              
+                      </tbody>
+                      <thead>
+                        <tr >
+                          
+                          <th scope="col" style="color: gray;">Email</th>
+                          <th scope="col" style="color: gray;">Address</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                          
+                        <tr>
+                          <td>{{data.email}}</td>
+                          <td>{{data.address}}</td>
+                        </tr>
+                        
+                              
+                      </tbody>
+                      <thead>
+                        <tr >
+                          
+                          <th scope="col" style="color: gray;">Class</th>
+                          <th scope="col" style="color: gray;">Division</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                          
+                        <tr>
+                          <td>{{data.clas}}</td>
+                          <td>{{data.division}}</td>
+                        </tr>
+                        
+                              
+                      </tbody>
+                  </table>
+                  <br><br><br>  
+              </div>
+              <br><br><br>
+          </div>
+
+        </div><!--/col-9-->
+    </div><!--/row-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% endblock %}

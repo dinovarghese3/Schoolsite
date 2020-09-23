@@ -1,0 +1,212 @@
+<!-- <div  style="background-color: black; color: white;" >
+    <ul>
+        <li ><a  href="{% url 'index' %}">index</a></li>
+        <li ><a  href="{% url 'allstudents' %}">Students</a></li>
+        <li ><a  href="{% url 'allteachers' %}">Teachers</a></li>
+        <li ><a  href="{% url 'mesage' %}">Messages</a></li>
+        <li ><a href="{% url 'registerteacher' %}">register Teacher</a></li>
+        <li><a href="{% url 'logout' %}">logout</a></li>
+    </ul>     
+    </div>
+<br><br><br><br> -->
+
+
+
+
+<head>
+    <title>Admin Pannel</title>
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Modernize Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta Tags -->
+
+    <!-- Style-sheets -->
+    <!-- Bootstrap Css -->
+    <link href="../static/adminapp/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Bootstrap Css -->
+    <!-- Bars Css -->
+    <link rel="stylesheet" href="../static/adminapp/css/bar.css">
+    <!--// Bars Css -->
+    <!-- Calender Css -->
+    <link rel="stylesheet" type="text/css" href="../static/adminapp/css/pignose.calender.css" />
+    <!--// Calender Css -->
+    <!-- Common Css -->
+    <link href="../static/adminapp/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--// Common Css -->
+    <!-- Nav Css -->
+    <link rel="stylesheet" href="../static/adminapp/css/style4.css">
+    <!--// Nav Css -->
+    <!-- Fontawesome Css -->
+    <link href="../static/adminapp/css/fontawesome-all.css" rel="stylesheet">
+    <!--// Fontawesome Css -->
+    <!--// Style-sheets -->
+
+    <!--web-fonts-->
+    <link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!--//web-fonts-->
+</head>
+
+<body>
+    <div class="se-pre-con"></div>
+    <div class="wrapper" >
+        <!-- Sidebar Holder -->
+        <nav id="sidebar" >
+            <div class="sidebar-header" >
+                <h1>
+                    <a href="{% url 'index' %}">Admin</a>
+                </h1>
+            </div>
+            <div class="profile-bg"></div>
+            <ul class="list-unstyled components" >
+                <li class="active">
+                    <a href="#" >
+                        <i class="fas fa-th-large"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'index' %}">
+                        <i class="fas fa-user"></i>
+                            Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'allstudents' %}">
+                        <i class="fas fa-users"></i>
+                        View All Students
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'allteachers' %}">
+                        <i class="fas fa-users"></i>
+                        View All Teachers
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'mesage' %}">
+                        <i class="fas fa-laptop"></i>
+                        View Messages
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'registerteacher' %}">
+                        <i class="fas fa-envelope"></i>
+                        Register Teacher
+                     </a>
+                </li>
+                <li>
+                    <a href="{% url 'logout' %}">
+                        <i class="fas fa-map"></i>
+                        Logout
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+        <!-- Page Content Holder -->
+        <div id="content">
+            <nav class="navbar navbar-default mb-xl-5 mb-4">
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                    <!-- Search-from -->
+                    
+                    <!--// Search-from -->
+                    <ul class="top-icons-agileits-w3layouts float-right">
+                        
+                            
+                            <div class="dropdown-menu top-grid-scroll drop-1">
+                                
+                                <a href="#" class="dropdown-item mt-3">
+                                    <div class="notif-img-agileinfo">
+                                        <img src="../static/adminApp/images/clone.jpg" class="img-fluid" alt="Responsive image">
+                                    </div>
+                                    <div class="notif-content-wthree">
+                                        
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item mt-3">
+                                    <div class="notif-img-agileinfo">
+                                        <img src="../static/adminApp/images/clone.jpg" class="img-fluid" alt="Responsive image">
+                                    </div>
+                                    <div class="notif-content-wthree">
+                                       
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item mt-3">
+                                    <div class="notif-img-agileinfo">
+                                        <img src="../static/adminApp/images/clone.jpg" class="img-fluid" alt="Responsive image">
+                                    </div>
+                                    <div class="notif-content-wthree">
+                                      
+                                    </div>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                               
+                            </div>
+                        
+                        <li class="nav-item dropdown mx-3">
+                            
+                            <div class="dropdown-menu top-grid-scroll drop-2">
+                                
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            
+                            <div class="dropdown-menu drop-3">
+                                
+                                
+                               
+                                
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+                <!-- Required common Js -->
+    <script src="../static/adminApp/js/jquery-2.2.3.min.js"></script>
+    <!-- //Required common Js -->
+    
+    <!-- loading-gif Js -->
+    <script src="../static/adminApp/js/modernizr.js"></script>
+    <script>
+        //paste this code under head tag or in a seperate js file.
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+    <!--// loading-gif Js -->
+
+    <!-- Sidebar-nav Js -->
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+    <!--// Sidebar-nav Js -->
+                {% block content %}
+                {% endblock %}
+            
+   </body>
+

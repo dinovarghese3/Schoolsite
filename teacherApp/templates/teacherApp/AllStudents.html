@@ -1,0 +1,79 @@
+{% extends 'teacherApp/teacherLayout.html' %} 
+{% block content %}
+<!-- <table>
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Addmision number</th>
+        <th>Age</th>
+        <th>dob</th>
+        <th>phone</th>
+        <th>email</th>
+        <th>address</th>
+        
+        <th>class</th>
+        <th>division</th>
+        
+    </tr>
+    {% for t in stud %}
+    <td>
+        <tr>
+            <td>{{t.Fname}}</td>
+            <td>{{t.Lname}}</td>
+            <td>{{t.admisionno}}</td>
+            <td>{{t.Age}}</td>
+            <td>{{t.dob}}</td>
+            <td>{{t.phonenumber}}</td>
+            <td>{{t.email}}</td>
+            <td>{{t.address}}</td>
+            
+            
+            <td>{{t.clas}}</td>
+            <td>{{t.division}}</td>
+            
+        </tr>
+        
+    </td>
+    {% endfor %}
+</table> -->
+<body>
+    
+
+<div style="margin: 5%;">
+    <center><h4>All Students</h4></center>
+    <hr width="50%" class="bg-success">
+    <br>
+<table class="table table-striped border rounded">
+    <thead>
+      <tr >
+        <th scope="col">Admision no</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        
+        <th scope="col">Age</th>
+        <th scope="col">DoB</th>
+        <th scope="col">Email</th>
+        <th scope="col">phone </th>
+        <th scope="col">Address</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for t in stud %}
+      <tr>
+        <th scope="row">{{t.admisionno}}</th>
+        <td>{{t.Fname}}</td>
+        <td>{{t.Lname}}</td>
+        <td>{{t.Age}}</td>
+        <td>{{t.dob}}</td>
+        <td>{{t.email}}</td>
+        <td>{{t.phonenumber}}</td>
+        <td>{{t.address}}</td>
+      </tr>
+      {% endfor %}
+            
+    </tbody>
+  </table>
+</div>
+</body>
+
+{% endblock %}
