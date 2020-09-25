@@ -36,6 +36,7 @@ def registerteacher(request):
     return render(request,'adminApp/registerTea.html')
 
 def index(request):
+    
     return render(request,'adminApp/index.html')
 
 def logout(request):

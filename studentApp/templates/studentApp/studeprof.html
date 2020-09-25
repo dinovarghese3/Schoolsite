@@ -1,6 +1,6 @@
 {% extends 'studentApp/studentLayout.html' %} 
 {% block content %}
-
+<!-- 
 <form action="#">
     <img src="{{data.dp.url}}" alt="dp" width="200px" height="200px">
     <input type="text" value="{{data.Fname}}" readonly>
@@ -15,6 +15,136 @@
     <input type="text" value="{{data.clas}}" readonly>
     <input type="text" value="{{data.division}}" readonly>
     
-</form>
+</form> -->
+
+</head>
+
+
+<br>
+<center><h1>Profile</h1></center>
+
+<hr width="50%" class="bg-danger">
+<br>
+<div class="container bootstrap snippet" style="font-family: sans-serif;">
+    
+    <div class="row">
+  		
+    </div>
+    <div class="row">
+  		<div class="col-sm-3"><!--left col-->
+      <div class="text-center">
+          
+        <img src="{{data.dp.url}}" class="rounded-circle" width="200px" height="200px" alt="avatar">
+      </div><br>
+        </div>
+    	<div class="col-sm-9">
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                <table class="table table-borderless  border rounded " >
+                    <thead>
+                        <tr>
+                            <th scope="col" style="color: gray;">Admisso Number</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{data.admisionno}}</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                      <tr >
+                        <th scope="col" style="color: gray;">First name</th>
+                        <th scope="col" style="color: gray;">Last name</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        
+                      <tr>
+                        <td>{{data.Fname}}</td>
+                        <td>{{data.Lname}}</td>
+                        
+                      </tr>
+                      
+                            
+                    </tbody>
+                    <thead>
+                        <tr >
+                          
+                          <th scope="col" style="color: gray;">Age</th>
+                          <th scope="col" style="color: gray;">Date-of-Birth</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                          
+                        <tr>
+                          <td>{{data.Age}}</td>
+                          <td>{{data.dob}}</td>
+                        </tr>
+                        
+                              
+                      </tbody>
+                      <thead>
+                        <tr >
+                          
+                          <th scope="col" style="color: gray;">Gender</th>
+                          <th scope="col" style="color: gray;">Phone Number</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                          
+                        <tr>
+                          <td>{{data.gender}}</td>
+                          <td>{{data.phonenumber}}</td>
+                        </tr>
+                        
+                              
+                      </tbody>
+                      <thead>
+                        <tr >
+                          
+                          <th scope="col" style="color: gray;">Email</th>
+                          <th scope="col" style="color: gray;">Address</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                          
+                        <tr>
+                          <td>{{data.email}}</td>
+                          <td>{{data.address}}</td>
+                        </tr>
+                        
+                              
+                      </tbody>
+                      <thead>
+                        <tr >
+                          
+                          <th scope="col" style="color: gray;">Class</th>
+                          <th scope="col" style="color: gray;">Division</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                          
+                        <tr>
+                          <td>{{data.clas}}</td>
+                          <td>{{data.division}}</td>
+                        </tr>
+                        
+                              
+                      </tbody>
+                  </table>
+                  <br><br><br>  
+              </div>
+              <br><br><br>
+          </div>
+
+        </div><!--/col-9-->
+    </div><!--/row-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 {% endblock %}

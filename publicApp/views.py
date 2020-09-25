@@ -3,8 +3,8 @@ from publicApp.models import *
 from django.http import HttpResponse,HttpResponseRedirect
 from django.urls import reverse
 # Create your views here.
-def register(request):
-    return render(request,'publicApp/register.html')
+# def register(request):
+#     return render(request,'publicApp/register.html')
 
 def login(request):
     msg = " "
@@ -17,7 +17,10 @@ def login(request):
                 admin=tbl_login.objects.get(email=email,password=password)
                 aid=admin.id
                 request.session['adminsession']=aid
-                return render(request,'adminApp/index.html')
+                stud_count=tbl_student.objects.all().count()
+                teach_count=tbl_teachers.objects.all().count()
+                All_Assig=tbl_questin.objects.all().count()
+                return render(request,'adminApp/index.html',{'stud_count':stud_count,'teach_count':teach_count,'All_Assig':All_Assig})
             elif user.type=='teacher':
                 teacher=tbl_teachers.objects.get(email=email,password=password)
                 i=teacher.id
@@ -29,9 +32,7 @@ def login(request):
                 request.session['studid']=i
                 return HttpResponseRedirect(reverse('stud_profile'))
         else:
-            msg =" no data"
-    else:
-        msg=" no post"    
+            msg="no data found"  
     return render(request,'publicApp/login.html',{'msg':msg})
 
 def home(request):

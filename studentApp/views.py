@@ -22,6 +22,7 @@ def answer(request,id):
     admi=data.admisionno
     if request.method=='POST':
         anws=request.FILES['an']
+        print(anws)
         anwersub=tbl_answers.objects.create(name=data.Fname+data.Lname,adno=admi,qid=qid,email=em,clas=cl,division=divi,answes=anws,sdate=d1)
         return HttpResponseRedirect(reverse('allassignments'))    
     return render(request,'studentApp/answer.html',{'asi':asi})

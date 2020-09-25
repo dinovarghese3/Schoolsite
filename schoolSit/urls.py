@@ -28,7 +28,7 @@ urlpatterns = [
     # publicApp
     url('home/$',home,name='home'),
     url('login/$',login,name='login'),
-    url('registr/$',register,name='register'),
+    # url('registr/$',register,name='register'),
     url('contact/$',contact,name='contact'),
     url('about/$',about,name='about'),
     #adminApp
@@ -47,7 +47,6 @@ urlpatterns = [
     url(r'^responds/(?P<id>[0-9]+)$',responds,name='responds'),
     url(r'^viewfile/(?P<id>[0-9]+)$',viewfile,name='viewfile'),
     url(r'^summaryfind/(?P<id>[0-9]+)$',summaryfind,name='summaryfind'),
-
     #studentApp
     url('studprof/$',stud_profile,name='stud_profile'),
     url(r'^answer/(?P<id>[0-9]+)$',answer,name='answer'),
