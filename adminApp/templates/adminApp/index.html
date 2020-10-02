@@ -53,7 +53,7 @@
 
 
     <div class="se-pre-con" style="display: none;"></div>
-    <div class="wrapper">
+    <div class="wrapper" >
         <!-- Sidebar Holder -->
         <!-- Page Content Holder -->
         <div id="content">
@@ -63,16 +63,20 @@
                 <div class="row">
                     <!-- Stats -->
                     <div class="outer-w3-agile col-xl">
+                        <a href="{% url 'allstudents' %}">
                         <div class="stat-grid p-3 d-flex align-items-center justify-content-between bg-primary">
                             <div class="s-l">
                                 <h5>Students</h5>
                             </div>
                             <div class="s-r">
                                 <h6>{{stud_count}}
-                                    <i class="far fa-smile"></i>
+                                    <i class="far fa-smile">
+                                        
+                                    </i>
                                 </h6>
                             </div>
-                        </div>
+                        </div></a>
+                        <a href="{% url 'allteachers' %}">
                         <div class="stat-grid p-3 mt-3 d-flex align-items-center justify-content-between bg-success">
                             <div class="s-l">
                                 <h5>Teachers</h5>
@@ -82,7 +86,7 @@
                                     <i class="fas fa-users"></i>
                                 </h6>
                             </div>
-                        </div>
+                        </div></a>
                         <div class="stat-grid p-3 mt-3 d-flex align-items-center justify-content-between bg-danger">
                             <div class="s-l">
                                 <h5>Works</h5>
@@ -94,17 +98,18 @@
                                 </h6>
                             </div>
                         </div>
+                        <a href="{% url 'mesage' %}">
                         <div class="stat-grid p-3 mt-3 d-flex align-items-center justify-content-between bg-warning">
                             <div class="s-l">
                                 <h5>Messages</h5>
                                 <p class="paragraph-agileits-w3layouts"></p>
                             </div>
                             <div class="s-r">
-                                <h6>#
+                                <h6>{{All_msg}}
                                     <i class="far fa-edit"></i>
                                 </h6>
                             </div>
-                        </div>
+                        </div></a>
                     </div>
                     <!--// Stats -->
                     
@@ -186,17 +191,15 @@
             ['Task', 'Hours per Day'],
             ['Students',{{stud_count}}],
             ['AllAssignments', {{All_Assig}}],
-            ['Submited',  2],
+            ['Messages',  {{All_msg}}],
             ['Teachers', {{teach_count}}],
-            ['Messages',    7]
+            ['**',    0]
           ]);
   
           var options = {
             title: ''
           };
-  
           var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-  
           chart.draw(data, options);
         }
       </script>

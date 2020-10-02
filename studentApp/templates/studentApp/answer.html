@@ -1,15 +1,22 @@
 {% extends 'studentApp/studentLayout.html' %} 
 {% block content %}
-<form action="{% url 'answer' asi.id %}?id=asi.id" method="POST" enctype="multipart/form-data"  style="margin-left: 20%;margin-right: 20%;margin-top: 10%;">{% csrf_token %}
+<head>
+    <title>Add Assignment</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  </head>
+<form action="{% url 'answer' asi.id %}?id=asi.id" method="POST" enctype="multipart/form-data"  style="margin-left: 10%;margin-right: 10%;margin-top: 10%;">{% csrf_token %}
     
     <div class="form-group border border-danger p-4">
         <h5> Select your answer file</h5>
     <input type="file" name="an" class="form-control" required>
     <br>
-    <input type="submit" class="btn-primary">
-        </div>
-        
+    <input type="submit" class="btn btn-primary" value="Submit">
+    </div>
+        <p class="alert alert-info">Only txt file is acceptable !</p>        
 </form> 
+
 
 
 {% endblock %}

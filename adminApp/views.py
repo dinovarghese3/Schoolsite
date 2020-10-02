@@ -1,5 +1,8 @@
 from django.shortcuts import render
-
+from django.conf import settings
+from django.core.mail import send_mail
+from django.http import HttpResponse,HttpResponseRedirect
+from django.urls import reverse
 from publicApp.models import *
 # Create your views here.
 def allstudents(request):
@@ -15,7 +18,8 @@ def mainpage(request):
     return render(request,'adminApp/mainpage.html')
 
 def mesage(request):
-    return render(request,'adminApp/msgs.html')
+    contact=tbl_contact.objects.all()
+    return render(request,'adminApp/msgs.html',{'contact':contact})
 
 def registerteacher(request):
     if request.method == 'POST':
@@ -42,3 +46,19 @@ def index(request):
 def logout(request):
     teacher=request.session.flush()
     return render(request,'publicApp/home.html')
+def replay(request,id):
+    data=tbl_contact.objects.get(id=id)
+    if data.rps=='replay':
+        if request.method=='POST':
+            re=request.POST.get('ms')
+            subject='Replay from shoole principle'
+            message=re
+            email_from = settings.EMAIL_HOST_USER
+            recipientlist=[data.email,]
+            send_mail(subject,message,email_from,recipientlist,fail_silently=True)
+            data.rps="replayed"
+            data.save()
+            return HttpResponseRedirect(reverse('view_cont'))
+    else:
+        return HttpResponseRedirect(reverse('mesage'))
+    return render(request,'adminapp/replay.html',{'data':data})

@@ -1,0 +1,162 @@
+
+{% extends 'studentApp/studentLayout.html' %} 
+{% block content %}
+<head>
+
+        <title>Message</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+    <style>
+        /* Chat containers */
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5% 15% 1% 5%;
+  max-width: 30%;
+  max-height:auto;
+}
+
+/* Darker chat container */
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+.rigt{
+    position:absolute;
+    margin-right: 0px;
+}
+
+/* Clear floats */
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Style images */
+.container .img{
+    color: rgb(122, 124, 122);
+}
+
+/* Style the right image */
+.container .img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
+p{
+    margin-left: 12%;
+
+}
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
+}
+    </style>
+</head>
+<br><br><br>
+<center ><h4>Messages</h4></center>
+<hr width="50%" class="bg-danger">
+<!-- <div class="form-group"  >
+<table>
+    <tr>
+        <td >
+            <div >
+                <table class="table-borderless" >
+                    <thead class="thead">
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in mess %}
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th class='form-control'>{{i.message}}</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                        </tr>        
+    
+                        <tr>
+                            <th></th>
+                        </tr>          
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </td>
+        <td>
+            <div>
+                <table class="table-borderless">
+                    <tbody>
+                        {% for i in message %}
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th class='form-control'>{{i.message}}</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                            </tr>          
+                            <tr>
+                                <th></th>
+                            </tr>          
+    
+                            <tr>
+                                <th></th>
+                            </tr>          
+    
+                            <tr>
+                                <th></th>
+                            </tr>          
+    
+                            <tr>
+                                <th></th>
+                            </tr>          
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </td>
+    </tr>  
+</table>
+</div> -->
+{% for i in messages %}
+{% if i.email == em %}
+<div class="container">
+    <span class="img">{{i.email}}</span>
+    <p>{{i.message}}</p>
+    
+  </div>
+{% else %}
+<div class="container" style="margin-left: 50%;">
+    <span class="img">you</span>
+    <p>{{i.message}}</p>
+    
+  </div>
+{% endif %}
+{% endfor %}
+<div class ="p-5">
+<form action="{% url 'studmessage' teac.id %}?id=teac.id" method="POST">{% csrf_token %}
+    <div class="form-group">
+      <textarea class="form-control" id="exampleInputEmail1" name="msg" placeholder="Enter message to send"></textarea>
+      <br>
+     <input type="submit" class="btn btn-primary" value="Send">
+    </div>
+</form>
+</div>
+
+{% endblock %}

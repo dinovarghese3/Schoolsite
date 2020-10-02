@@ -17,14 +17,15 @@
 
 
 </form> -->
-<br>
-<center><h4>Register Student</h4></center>
+<!-- <br><center><h4>Register Student</h4></center>
 <br>
 <hr width="50%" class="bg-success">
 <form action="{%  url 'registerstud' %}" method="POST" enctype="multipart/form-data" style="margin-left: 10%;margin-right: 10%;">{% csrf_token %}
     <div class="form-group">
-      <label >Firstname</label>
-      <input type="text" class="form-control"  name='fname'  placeholder="First name">
+      
+            <label >Firstname</label>
+            <input type="text" class="form-control"  name='fname'  placeholder="First name">
+            
     </div>
     <div class="form-group">
         <label >Lastname</label>
@@ -83,5 +84,78 @@
         <input type="file" name="photo" class="form-control"name="photo" required>
       </div>
     <input type="submit" class="btn btn-primary" value="submit">
-    </form>
+    </form> --> 
+  <html lang="en">
+  <head>
+  <title>Register Student</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<body>
+
+<div class="container" style="font-family: sans-serif;"><br><br>
+  <h2>Register Student</h2>
+  <br>
+  <form action="{%  url 'registerstud' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    <div class="form-group">
+      <label for="email">Fname:</label>
+      <input type="text" class="form-control" placeholder="Fanme" name="fname">
+    </div>
+    <div class="form-group">
+      <label for="email">Lname:</label>
+      <input type="text" class="form-control"  placeholder="Lanme" name="ln">
+    </div>
+    <div class="form-group">
+      <label for="email">Addmision number</label>
+      <input type="number" class="form-control"  placeholder="Addmision no" name="adno">
+    </div>
+    <div class="form-group">
+      <label for="email">Age:</label>
+      <input type="number" class="form-control" id="email" placeholder="Age" name="age">
+    </div>
+    <div class="form-group">
+      <label for="email">Date-of-Birth:</label>
+      <input type="date" class="form-control" id="email" placeholder="date of birth" name="dob">
+    </div>
+    <div class="form-group">
+      <label ><h6>Gender</h6></label>
+      <br>
+      <label>Male</label>
+      <input type="radio"  placeholder="Age" name="gender" value="male">
+    </div>
+    <div class="form-group">
+      <label for="email">Female</label>
+      <input type="radio"  placeholder="Age" name="gender" value="female">
+    </div>
+    <div class="form-group">
+      <label for="email">Other</label>
+      <input type="radio"  placeholder="Age" name="gender"value="other">
+    </div>
+    <div class="form-group">
+      <label for="email">Phone number</label>
+      <input type="text" class="form-control" id="email" placeholder="Phone number" name="ph">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" placeholder="Email id" name="mail">
+    </div>
+    <div class="form-group">
+      <label for="email">address</label>
+      <textarea  class="form-control" id="email" placeholder="Address" name="address"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pass">
+    </div>
+    <div class="form-group">
+      <label for="email">Photo</label>
+      <input type="file" class="form-control" name="photo" required>
+    </div>
+    
+    <input type="submit" class="btn btn-primary" value="Submit">
+  </form>
+</div>
+
+</body>
 {% endblock %}

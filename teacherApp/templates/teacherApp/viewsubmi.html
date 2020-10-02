@@ -1,0 +1,39 @@
+{% extends 'teacherApp/teacherLayout.html' %} 
+{% block content %}
+<head>
+  <title>All NotSubmited Students</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<body>
+    
+<div style="margin-left: 5%; margin-right: 5%;" ><br>
+    <center><h4>Assignment Not Submited List</h4></center>
+    <hr width="50%" class="bg-success">
+    <br>
+<div class="table-responsive">
+<table class="table table-striped border rounded">
+    <thead>
+      <tr >
+        <th scope="col">Email</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        {% for t in intrerlist %}
+      <tr>
+        
+        <td>{{t.Fname}}</td>
+        <td>{{t.Lname}}</td>
+        
+      </tr>
+      {% endfor %}
+            
+    </tbody>
+  </table>
+</div>
+</div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,127 @@
+
+{% extends 'studentApp/studentLayout.html' %} 
+{% block content %}
+<head>
+    <title>Teacher </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    
+    
+  </head>
+  <br>
+  <center><h4>Class Teacher</h4></center>
+  
+  <hr width="50%" class="bg-danger">
+  <br>
+  <div class="container bootstrap snippet" style="font-family: sans-serif;">
+      
+      <div class="row">
+            
+      </div>
+      <div class="row">
+            <div class="col-sm-3"><!--left col-->
+        <div class="text-center">  
+          <img src="{{teacher.dp.url}}" class="rounded-circle" width="200px" height="200px" alt="avatar">
+        </div><br>
+          </div>
+          <div class="col-sm-9">
+            <div class="tab-content">
+              <div class="tab-pane active" id="home">
+                  <table class="table table-borderless  border rounded " >
+                      <thead >
+                        <tr >
+                          
+                          <th scope="col" style="color: gray;">First name</th>
+                          <th scope="col" style="color: gray;">Last name</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                          
+                        <tr>
+                          <td>{{teacher.Fname}}</td>
+                          <td>{{teacher.Lname}}</td>
+                        </tr>
+                        
+                              
+                      </tbody>
+                      <thead>
+                          <tr >
+                            
+                            <th scope="col" style="color: gray;">Age</th>
+                            <th scope="col" style="color: gray;">Date-of-Birth</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                            
+                          <tr>
+                            <td>{{teacher.Age}}</td>
+                            <td>{{teacher.dob}}</td>
+                          </tr>
+                          
+                                
+                        </tbody>
+                        <thead>
+                          <tr >
+                            
+                            <th scope="col" style="color: gray;">Gender</th>
+                            <th scope="col" style="color: gray;">Phone Number</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                            
+                          <tr>
+                            <td>{{teacher.gender}}</td>
+                            <td>{{teacher.phonenumber}}</td>
+                          </tr>
+                          
+                                
+                        </tbody>
+                        <thead>
+                          <tr >
+                            
+                            <th scope="col" style="color: gray;">Email</th>
+                            <th scope="col" style="color: gray;">Address</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                            
+                          <tr>
+                            <td>{{teacher.email}}</td>
+                            <td>{{teacher.address}}</td>
+                          </tr>
+                          
+                                
+                        </tbody>
+                        <thead>
+                          <tr >
+                            
+                            <th scope="col" style="color: gray;">Class</th>
+                            <th scope="col" style="color: gray;">Division</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                            
+                          <tr>
+                            <td>{{teacher.clas}}</td>
+                            <td>{{teacher.division}}</td>
+                          </tr>
+                          
+                                
+                        </tbody>
+                    </table>
+                    <br><br><br>  
+                </div>
+                <center><a href="{% url 'studmessage' teacher.id %}" class="btn btn-primary">Message</a></center>
+                <br><br><br>
+            </div>
+  
+          </div><!--/col-9-->
+      </div><!--/row-->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  {% endblock %}

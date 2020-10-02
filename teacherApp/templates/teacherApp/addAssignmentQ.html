@@ -9,7 +9,7 @@
     <textarea name="ques" cols="30" rows="10" required></textarea>
     <input type="submit" value="submit">
 </form> -->
-<br>
+<!-- <br>
 <center><h4>Add Questin</h4></center>
 <hr width="50%" class="bg-success">
 <br>
@@ -35,5 +35,39 @@
         <textarea class="form-control" name="ques" cols="30" rows="10" required ></textarea>
       </div>
       <input type="submit" value="submit" class="btn btn-primary">
-</form>
+</form> -->
+<html lang="en">
+<head>
+  <title>Add Assignment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<body>
+
+<div class="container"><br><br>
+  <h2>Add Assignment</h2>
+  <form action="{% url 'addassignment' %}" method="POST" >{% csrf_token %}
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Fanme" value="{{data.email}}">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Fanme" value="{{data.clas}}">
+    </div>
+    <div class="form-group">
+      <label for="email">Fname:</label>
+      <input type="text" class="form-control" placeholder="Fanme" value="{{data.division}}">
+    </div>
+    <div class="form-group">
+      <label for="email">Date-of-Submision</label>
+      <input type="date" class="form-control"  name="ld">
+    </div>
+    <div class="form-group">
+      <label for="email">Questin</label>
+      <textarea class="form-control" name="ques"></textarea>
+    </div>
+    <input type="submit" class="btn btn-primary">
+    </form>
+    </div>
+ 
 {% endblock %}

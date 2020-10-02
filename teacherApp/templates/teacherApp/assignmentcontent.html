@@ -1,0 +1,42 @@
+{% extends 'teacherApp/teacherLayout.html' %} 
+{% block content %}
+
+<!-- <form  method="POST" enctype="multipart/form-data" >{% csrf_token %}
+    <div class="form-group">
+    <label >File Summery</label>
+    <textarea cols="20px" rows="50px" class="form-control">{{data}}</textarea>
+    </div>
+</form> -->
+<head>
+  <title>View Assignment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<br><br><br>
+<div class="border border-warning rounded" style="width: 95%; margin-left: 2%;margin-right: 5%; ">
+<table class="table " >
+    <thead class="thead-light">
+      <tr>
+       <th scope="col"  ><center><h4>Assignment File</h4></center></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 110%;letter-spacing: 1px;">{{text}}</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+<div class="p-5 border border-primary rounded" style="margin-left: 30%;margin-right: 30%; margin-top: 2%;">
+  <form action="{% url 'Assignmentfile' data.id %}" method="POST">{% csrf_token %}
+    <div class="form-group">
+      <label>Mark</label>
+      <input type="number" class="form-control" placeholder="Maximum mark is 20!" name="mark">
+      <br>
+      <input type="submit" class=" btn btn-primary">
+      
+    </div>
+  </form>
+</div>
+{% endblock %}

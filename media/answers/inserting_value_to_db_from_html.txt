@@ -1,0 +1,24 @@
+inserting dats to database from html
+
+html
+-----
+eg::
+
+<form action="{% url 'function_name' %} method="POST">{% csrf_token %}
+	<input type="text" name="t1">
+	<input type="submit">
+</form>
+
+views.py
+--------
+sy:::
+
+def fun_name(request):
+	variable=request.POST.get("input_field name")
+	database_object=table_name.objects.create(table_field=variable)
+eg:::
+def registration(request):
+	num=request.POST.get("t1")
+	db=tbl_registration.objects.create(Number=num)
+
+	

@@ -21,12 +21,14 @@ from studentApp.views import *
 from teacherApp.views import *
 from django.conf.urls import url
 from django.conf import settings
+import publicApp
+from publicApp.views import *
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # publicApp
-    url('home/$',home,name='home'),
+    url(r'^$',home,name='home'),
     url('login/$',login,name='login'),
     # url('registr/$',register,name='register'),
     url('contact/$',contact,name='contact'),
@@ -38,6 +40,7 @@ urlpatterns = [
     url('registerTe/$',registerteacher,name='registerteacher'),
     url('index/$',index,name='index'),
     url('logout/$',logout,name='logout'),
+    url(r'^replay/(?P<id>[0-9]+)$',replay,name='replay'),
     #teacherApp
     url('teacherprofile/$',t_profile,name='t_profile'),
     url('Students/$',students,name='students'),
@@ -47,11 +50,18 @@ urlpatterns = [
     url(r'^responds/(?P<id>[0-9]+)$',responds,name='responds'),
     url(r'^viewfile/(?P<id>[0-9]+)$',viewfile,name='viewfile'),
     url(r'^summaryfind/(?P<id>[0-9]+)$',summaryfind,name='summaryfind'),
+    url(r'^message/(?P<id>[0-9]+)$',message,name='message'),
+    # url(r'^Allsubmision/(?P<id>[0-9]+)$',Allsubmision,name='Allsubmision'),
+    url(r'^Assignmentfile/(?P<id>[0-9]+)$',Assignmentfile,name='Assignmentfile'),
+    # url(r'^printdoc/(?P<id>[0-9]+)$',printdoc,name='printdoc'),
     #studentApp
     url('studprof/$',stud_profile,name='stud_profile'),
     url(r'^answer/(?P<id>[0-9]+)$',answer,name='answer'),
     url('allassignments/$',allassignments,name='allassignments'),
-
+    url(r'^studmessage/(?P<id>[0-9]+)$',studmessage,name='studmessage'),
+    url('teacherprofileview/$',teacherprofile,name='teacherprofile'),
 ]
+
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

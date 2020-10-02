@@ -28,7 +28,7 @@ SECRET_KEY = '8m2ohezd7zdw++f13&@5i^k&ul1=+p&-_zu6d$5dkkco=#hd+8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.43.23','localhost', '127.0.0.1']
 
 
 # Application definition
@@ -123,7 +123,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
 STATIC_URL = '/static/'
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'meuppick2@gmail.com'
+EMAIL_HOST_PASSWORD =  'sam&dino123'
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
