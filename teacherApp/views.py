@@ -84,11 +84,17 @@ def responds(request,id):
         di=data1.division
         intrerlist=[]
         data=tbl_student.objects.filter(clas=cl,division=di)
+        # looping throw the students list and cheking the student is present in answer table with current qid
         for i in data:
-            if tbl_answers.objects.filter(email=i.email):
+            # if the student is present in answertable with the qid just continue
+            if tbl_answers.objects.filter(email=i.email,qid=qesid):
+                # print('submitted')
                 continue
+                # other wise insert to a list 
             else:
+                # print('not subm')
                 intrerlist.append(i)
+                # print(i.Fname)
     except:
         return render(request,'publicApp/404.html')
     return render(request,'teacherApp/responds.html',{'answer':answer,'qesid':qesid,'intrerlist':intrerlist})
