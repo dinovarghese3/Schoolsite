@@ -127,8 +127,8 @@ STATIC_URL = '/static/'
 
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'meuppick2@gmail.com'
-EMAIL_HOST_PASSWORD =  'sam&dino123'
+EMAIL_HOST_USER = 'emailid'
+EMAIL_HOST_PASSWORD =  'password'
 EMAIL_PORT=587
 EMAIL_USE_TLS=True
 
